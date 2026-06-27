@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05030a">
+  <title>For Anaswara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="returning-visitor" class="returning-visitor" hidden>
+    <div class="return-card" role="dialog" aria-labelledby="return-title">
+      <p class="eyebrow">Welcome back,</p>
+      <h1 id="return-title">Anaswara.</h1>
+      <p>Some stories are worth reading more than once.</p>
+      <div class="return-actions">
+        <button id="continue-journey" type="button">Continue</button>
+        <button id="start-again" type="button">Start Again</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="app" class="experience" aria-live="polite">
+    <section id="intro-screen" class="screen intro-screen is-active" aria-label="Gift opening">
+      <button id="gift-box" class="gift-box" type="button" aria-label="Open gift">
+        <span class="gift-shadow"></span>
+        <span class="gift-lid">
+          <span class="gift-bow gift-bow-left"></span>
+          <span class="gift-bow gift-bow-right"></span>
+          <span class="gift-ribbon gift-ribbon-horizontal"></span>
+        </span>
+        <span class="gift-base">
+          <span class="gift-ribbon gift-ribbon-vertical"></span>
+          <span class="gift-ribbon gift-ribbon-horizontal"></span>
+        </span>
+      </button>
+      <div id="intro-particles" class="particle-field" aria-hidden="true"></div>
+    </section>
+
+    <section id="password-screen" class="screen password-screen" aria-label="Password" hidden>
+      <div class="password-aura" aria-hidden="true"></div>
+      <form id="password-form" class="password-card" autocomplete="off">
+        <p class="eyebrow">A small key for a quiet sky</p>
+        <h1>Enter the date</h1>
+        <div class="input-shell">
+          <input
+              id="password-input"
+              name="password"
+              type="text"
+              inputmode="numeric"
+              maxlength="10"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="DD / MM / YYYY"
+              aria-describedby="password-hint password-message"
+          >
+
+        </div>
+        <p id="password-hint" class="password-hint">The day your story this year begins.</p>
+        <button class="primary-action password-submit" type="submit">Begin</button>
+        <p id="password-message" class="password-message" role="status"></p>
+      </form>
+    </section>
+
+    <section id="hero-screen" class="screen hero-screen" aria-label="Birthday sky" hidden>
+      <div class="hero-portrait" aria-hidden="true">
+        <img src="assets/hero/hero.jpg" alt="">
+      </div>
+      <div class="hero-subject" aria-hidden="true">
+        <img src="assets/hero/hero.jpg" alt="">
+      </div>
+      <div class="nebula-glow" aria-hidden="true"></div>
+      <div class="light-rays" aria-hidden="true"></div>
+      <div class="soft-fog" aria-hidden="true"></div>
+      <div class="hero-overlay hero-overlay-dark" aria-hidden="true"></div>
+      <div class="hero-overlay hero-overlay-purple" aria-hidden="true"></div>
+      <div id="stars" class="stars" aria-hidden="true"></div>
+      <div id="hero-particles" class="particle-field hero-particles" aria-hidden="true"></div>
+      <div id="fireflies" class="fireflies" aria-hidden="true"></div>
+
+      
+
+
+
+      <div class="hero-copy" aria-live="polite">
+        <p id="line-one" class="hero-line hero-name">For Anaswara</p>
+        <p id="line-two" class="hero-line hero-title">Happy Birthday</p>
+        <p id="line-three" class="hero-line hero-wish">May this year surprise you in the most beautiful ways.</p>
+      </div>
+
+      <div class="ocean" aria-hidden="true">
+        <svg class="wave wave-one" viewBox="0 0 1440 240" preserveAspectRatio="none">
+          <path d="M0,138 C122,104 214,118 330,154 C476,200 588,122 716,132 C846,142 936,208 1080,158 C1224,110 1320,118 1440,142 L1440,240 L0,240 Z"></path>
+        </svg>
+        <svg class="wave wave-two" viewBox="0 0 1440 240" preserveAspectRatio="none">
+          <path d="M0,156 C160,94 288,172 432,150 C574,128 682,74 838,138 C994,202 1100,174 1236,136 C1334,108 1398,126 1440,146 L1440,240 L0,240 Z"></path>
+        </svg>
+        <svg class="wave wave-three" viewBox="0 0 1440 240" preserveAspectRatio="none">
+          <path d="M0,176 C168,144 298,190 460,166 C636,140 764,118 930,174 C1110,234 1266,172 1440,184 L1440,240 L0,240 Z"></path>
+        </svg>
+      </div>
+
+      <a class="scroll-indicator" href="#memory-tree-section" aria-label="Scroll to memories">
+        <span class="scroll-arrow" aria-hidden="true">&darr;</span>
+        <span>Scroll</span>
+      </a>
+    </section>
+
+    <section id="memory-tree-section" class="journey-section memory-tree-section" aria-labelledby="tree-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">Collected with smiles, kept with care</p>
+        <h2 id="tree-title">A Tree of Memories</h2>
+
+        <p id="tree-hint" class="interaction-hint">
+            ✨ Every leaf hides a little memory.<br>
+            Touch one to relive it.
+        </p>
+      </div>
+      <div class="tree-stage">
+        <div id="tree-fireflies" class="tree-fireflies" aria-hidden="true"></div>
+        <svg class="memory-tree" viewBox="0 0 920 760" role="img" aria-label="A magical tree carrying memories">
+          <path class="tree-trunk" d="M461 720 C438 610 438 516 458 430 C477 352 520 296 544 206 C498 292 458 334 414 382 C390 306 340 270 282 224 C346 298 378 356 394 438 C344 404 286 394 214 396 C300 424 366 468 418 544 C396 606 398 662 414 720 Z"></path>
+          <path class="tree-branch branch-one" d="M454 410 C366 334 276 302 162 314"></path>
+          <path class="tree-branch branch-two" d="M464 392 C538 302 632 254 760 244"></path>
+          <path class="tree-branch branch-three" d="M442 502 C354 474 270 492 174 548"></path>
+          <path class="tree-branch branch-four" d="M486 502 C592 454 688 470 802 536"></path>
+          <path class="tree-branch branch-five" d="M468 330 C432 254 390 196 326 150"></path>
+          <path class="tree-branch branch-six" d="M492 320 C536 238 594 172 680 126"></path>
+        </svg>
+        <div id="memory-leaves" class="memory-leaves"></div>
+        <div id="memory-lanterns" class="memory-lanterns"></div>
+      </div>
+    </section>
+
+    <section id="wishes-section" class="journey-section wishes-section" aria-labelledby="wishes-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">For the year ahead</p>
+        <h2 id="wishes-title">Birthday Wishes</h2>
+      </div>
+      <div class="wish-grid">
+        <article class="wish-card">May the quiet dreams you keep close become real in their own beautiful time.</article>
+        <article class="wish-card">May your courage stay soft, your heart stay open, and your days feel lighter.</article>
+        <article class="wish-card">May this year bring health, laughter, clear skies, and memories that stay warm.</article>
+      </div>
+    </section>
+
+    <section id="make-a-wish-section" class="journey-section cake-section" aria-labelledby="cake-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">One little birthday ritual</p>
+
+        <h2 id="cake-title">
+            Close your eyes.
+        </h2>
+
+        <p>
+            Make a wish...
+        </p>
+
+        <p id="cake-hint" class="interaction-hint">
+            🕯 Touch the candle to blow it out.
+        </p>
+      </div>
+      <button id="candle-button" class="cake-scene" type="button" aria-label="Blow out the candle">
+        <span class="cake-plate"></span>
+        <span class="cake-body"></span>
+        <span class="cake-icing"></span>
+        <span class="candle">
+          <span class="wick"></span>
+          <span class="flame"></span>
+        </span>
+      </button>
+      <p id="wish-result" class="wish-result" role="status"></p>
+    </section>
+
+    <section id="surprise-section" class="journey-section surprise-section" aria-labelledby="surprise-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">Before you leave...</p>
+
+        <h2 id="surprise-title">
+            One last surprise.
+        </h2>
+
+        <p id="gift-hint" class="interaction-hint">
+            🎁 Tap the envelope.
+        </p>
+      </div>
+      <button id="envelope" class="envelope" type="button" aria-label="Open the handwritten envelope">
+        <span class="envelope-back"></span>
+        <span class="paper">
+          <span>My dear friend,</span>
+          <span>It's been more than a year since we first met, and one thing has always stayed with me: you are one of the boldest people I have ever known, yet at the same time one of the most genuine and emotional. That balance is rare, and it is something I truly admire.</span>
+          <span>I hope this year fills your life with happiness, good health, unforgettable memories, and beautiful surprises. I hope every dream you quietly work towards, and every little thing you manifest, slowly finds its way to you.</span>
+          <span>Never stop believing in yourself, because I truly believe there are wonderful things waiting for you.</span>
+          <span>No matter where life takes us, I hope you always know that you have a friend who will always wish the very best for you.</span>
+          <span>Happy Birthday, Anaswara.</span>
+          <span class="signature">
+              ❤️ — Your forever friend.
+          </span>
+        </span>
+        <span class="envelope-front"></span>
+        <span class="envelope-flap"></span>
+      </button>
+    </section>
+
+    <section id="ending-section" class="journey-section ending-section" aria-labelledby="ending-title" hidden>
+      <div class="ending-sky" aria-hidden="true"></div>
+      <div class="ending-copy">
+        <h2 id="ending-title">Happy Birthday<br>Anaswara</h2>
+        <p>Keep believing. Keep smiling. Keep dreaming. Keep living in the moment.</p>
+        <p class="universe-note">
+            Some birthdays become memories.<br>
+            I hope this one becomes one of your favourites.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="media-modal" class="media-modal" aria-hidden="true" role="dialog" aria-label="Memory preview">
+    <button id="modal-close" class="modal-close" type="button" aria-label="Close preview">&times;</button>
+    <div id="modal-stage" class="modal-stage"></div>
+  </div>
+
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/media-manifest.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/password.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

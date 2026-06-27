@@ -1,0 +1,239 @@
+@keyframes giftAppear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes giftFloat {
+  0%, 100% { transform: translate3d(0, -4px, 0) scale(0.84); }
+  50% { transform: translate3d(0, 8px, 0) scale(0.87); }
+}
+
+@keyframes giftBreathe {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(189, 161, 255, 0.34)); }
+  50% { filter: drop-shadow(0 0 32px rgba(189, 161, 255, 0.76)); }
+}
+
+@keyframes ribbonPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes caretBlink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.18; transform: scale(0.78); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+
+@keyframes fireflyDrift {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) scale(0.7); }
+  18%, 70% { opacity: 0.82; }
+  100% { opacity: 0; transform: translate3d(var(--drift-x), var(--drift-y), 0) scale(1.2); }
+}
+
+@keyframes lightRayDrift {
+  0%, 100% { transform: translateX(-1.5%) skewX(-5deg); }
+  50% { transform: translateX(1.5%) skewX(-2deg); }
+}
+
+@keyframes fogDrift {
+  0%, 100% { transform: translateX(-2%); opacity: 0.8; }
+  50% { transform: translateX(2%); opacity: 1; }
+}
+
+
+
+@keyframes rippleOut {
+  0% { opacity: 0.75; transform: scale(0.7); }
+  100% { opacity: 0; transform: scale(1.35); }
+}
+
+@keyframes recordSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes waveDrift {
+  0% { transform: translateX(-2%); }
+  50% { transform: translateX(3%); }
+  100% { transform: translateX(-2%); }
+}
+
+@keyframes scrollDrift {
+  0%, 100% { opacity: 0.45; transform: translate(-50%, 0); }
+  50% { opacity: 0.9; transform: translate(-50%, -8px); }
+}
+
+@keyframes treeSway {
+  0%, 100% { transform: rotate(-0.35deg); }
+  50% { transform: rotate(0.35deg); }
+}
+
+@keyframes leafSway {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -9px; }
+}
+
+@keyframes lanternFloat {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: 10px; }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: translateX(-50%) scale(1) rotate(-2deg); }
+  30% { transform: translateX(-50%) scale(0.92, 1.1) rotate(3deg); }
+  62% { transform: translateX(-50%) scale(1.06, 0.94) rotate(-4deg); }
+}
+
+.gift-box {
+  opacity: 0;
+  animation:
+    giftAppear 1.2s ease-out 0.45s forwards,
+    giftFloat 5.8s ease-in-out infinite,
+    giftBreathe 4.4s ease-in-out infinite;
+}
+
+.gift-ribbon {
+  animation: ribbonPulse 2.8s ease-in-out infinite;
+}
+
+.input-caret {
+  animation: caretBlink 1s steps(1) infinite;
+}
+
+.star {
+  animation: starTwinkle var(--twinkle, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.firefly,
+.tree-firefly {
+  animation: fireflyDrift var(--duration, 9s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.light-rays {
+  animation: lightRayDrift 18s ease-in-out infinite;
+}
+
+.soft-fog {
+  animation: fogDrift 20s ease-in-out infinite;
+}
+
+
+.vinyl-player.is-playing .record {
+  animation: recordSpin 5.2s linear infinite;
+}
+
+.wave {
+  animation: waveDrift 18s ease-in-out infinite;
+}
+
+.wave-two {
+  animation-duration: 24s;
+  animation-direction: reverse;
+}
+
+.wave-three {
+  animation-duration: 30s;
+}
+
+.scroll-indicator {
+  animation: scrollDrift 2.8s ease-in-out infinite;
+}
+
+.memory-tree {
+  animation: treeSway 11s ease-in-out infinite;
+  transform-origin: 50% 92%;
+}
+
+.memory-leaf {
+  animation: leafSway var(--leaf-speed, 8s) ease-in-out infinite;
+}
+
+.memory-lantern {
+  animation: lanternFloat var(--lantern-speed, 9s) ease-in-out infinite;
+}
+
+.flame {
+  animation: flameFlicker 1.8s ease-in-out infinite;
+}
+
+.envelope-flap,
+.paper,
+.wish-card,
+.memory-leaf,
+.memory-lantern {
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+.memory-leaf:hover,
+.memory-lantern:hover {
+  transform: translate(-50%, -50%) rotate(var(--leaf-rotate, 0deg)) scale(1.14);
+  filter: brightness(1.08);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.46),
+    0 0 48px rgba(242, 212, 141, 0.28),
+    0 0 72px rgba(189, 161, 255, 0.24);
+  z-index: 5;
+}
+
+.memory-leaf.is-blooming,
+.memory-lantern.is-blooming {
+  transform: translate(-50%, -50%) rotate(var(--leaf-rotate, 0deg)) scale(2.1);
+  z-index: 30;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(242, 212, 141, 0.55),
+    0 0 100px rgba(189, 161, 255, 0.45);
+}
+
+.wish-card {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.wish-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes hintFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+        opacity:.72;
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+        opacity:1;
+
+    }
+
+}
